@@ -1,0 +1,36 @@
+# script de test pour le programme bourse
+# usage :
+# > scat bourse.script
+
+reset
+
+# perso nom	
+80 00 00 00 04 "carl"
+
+# lecture nom
+80 01 00 00 03
+80 01 00 00 04
+
+# lecture solde
+80 02 00 00 03
+80 02 00 00 02
+
+# credit
+80 03 00 00 03 27 10
+80 03 00 00 02 27 10
+80 02 00 00 02        # lecture solde
+80 03 00 00 02 77 77
+80 02 00 00 02        # lecture solde
+80 03 00 00 02 77 77
+80 02 00 00 02        # lecture solde
+
+# debit
+80 04 00 00 03 27 10
+80 04 00 00 02 27 10
+80 02 00 00 02        # lecture solde
+80 04 00 00 02 77 77
+80 02 00 00 02        # lecture solde
+80 04 00 00 02 77 77
+80 02 00 00 02        # lecture solde
+
+exit				  # fin du script

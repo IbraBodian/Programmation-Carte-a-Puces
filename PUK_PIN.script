@@ -1,0 +1,27 @@
+# script de test pour le programme code
+# usage :
+# > scat code.script
+
+reset
+
+# perso puk	
+a0 40 00 00 08 "12345678"
+
+# blocage code pin
+a0 20 00 00 08 "11111111"
+a0 20 00 00 08 "11111111"
+a0 20 00 00 08 "11111111"
+a0 20 00 00 08 "00000000"
+
+#deblocage
+a0 2c 00 00 10 "1234567811111111"
+
+#deverouiller
+a0 20 00 00 08 "11111111"
+
+#changer pin
+a0 24 00 00 10 "1111111122222222"
+a0 20 00 00 08 "22222222"
+
+
+exit				  # fin du script
